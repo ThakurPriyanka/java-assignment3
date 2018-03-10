@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Operation {
     /**
-     *@param birthDate . from year we have to print days
+     * @param birthDate . from year we have to print days
      * @return listOfDay . list of day on which birthday fall
      */
     public List<DayOfWeek> getDayOfBirth(LocalDate birthDate) {
@@ -15,7 +15,7 @@ public class Operation {
         List<DayOfWeek> listOfDay = new ArrayList<DayOfWeek>();
         LocalDate nextYear = birthDate;
         Integer year = today.getYear() + 1;
-        while(!year.equals(nextYear.getYear())){
+        while (!year.equals(nextYear.getYear())) {
             listOfDay.add(nextYear.getDayOfWeek());
             nextYear = nextYear.plus(1, ChronoUnit.YEARS);
 
@@ -29,7 +29,7 @@ public class Operation {
      */
     public ZonedDateTime getTimeOfZone(ZoneId zone) {
         LocalDateTime localtDateAndTime = LocalDateTime.now();
-        return ZonedDateTime.of(localtDateAndTime, zone );
+        return ZonedDateTime.of(localtDateAndTime, zone);
     }
 
     /**
@@ -41,8 +41,8 @@ public class Operation {
         List<Integer> listOfLeapYear = new ArrayList<Integer>();
         LocalDate nextYear = startYear;
         Integer year = today.getYear();
-        while(!year.equals(nextYear.getYear())){
-            if(nextYear.isLeapYear()) {
+        while (!year.equals(nextYear.getYear())) {
+            if (nextYear.isLeapYear()) {
                 listOfLeapYear.add(nextYear.getYear());
             }
             nextYear = nextYear.plus(1, ChronoUnit.YEARS);
@@ -51,7 +51,7 @@ public class Operation {
     }
 
     /**
-     * @param gandhiDob . starting date from which to calculate second
+     * @param gandhiDob   . starting date from which to calculate second
      * @param gandhiDeath . date till which second to be calculated
      * @return number of second between the date
      */
@@ -63,11 +63,10 @@ public class Operation {
         LocalDate nextYear = gandhiDob;
         Integer year = gandhiDeath.getYear();
         Long secondLived = 0L;
-        while(!year.equals(nextYear.getYear())){
-            if(nextYear.isLeapYear()) {
+        while (!year.equals(nextYear.getYear())) {
+            if (nextYear.isLeapYear()) {
                 secondLived = leapYear * oneDay.getSeconds();
-            }
-            else {
+            } else {
                 secondLived = oddYear * oneDay.getSeconds();
             }
             nextYear = nextYear.plus(1, ChronoUnit.YEARS);

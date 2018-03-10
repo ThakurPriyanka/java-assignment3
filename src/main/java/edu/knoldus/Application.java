@@ -3,7 +3,6 @@ package edu.knoldus;
 import edu.knoldus.operation.Operation;
 
 import java.time.LocalDate;
-import java.time.Month;
 import java.time.ZoneId;
 
 public class Application {
@@ -17,7 +16,7 @@ public class Application {
         LocalDate year = LocalDate.of(1900, 01, 01);
         System.out.println(operationObj.getLeapYear(year));
         LocalDate gandhiDob = LocalDate.of(1869, 10, 02);
-        LocalDate gandhiDeath = LocalDate.of( 1948, 01, 30);
+        LocalDate gandhiDeath = LocalDate.of(1948, 01, 30);
         System.out.println(operationObj.getTimeLived(gandhiDob, gandhiDeath));
     }
 }
