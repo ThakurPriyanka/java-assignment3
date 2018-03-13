@@ -65,9 +65,9 @@ public class Operation {
         Long secondLived = 0L;
         while (!year.equals(nextYear.getYear())) {
             if (nextYear.isLeapYear()) {
-                secondLived = leapYear * oneDay.getSeconds();
+                secondLived += leapYear * oneDay.getSeconds();
             } else {
-                secondLived = oddYear * oneDay.getSeconds();
+                secondLived += oddYear * oneDay.getSeconds();
             }
             nextYear = nextYear.plus(1, ChronoUnit.YEARS);
         }

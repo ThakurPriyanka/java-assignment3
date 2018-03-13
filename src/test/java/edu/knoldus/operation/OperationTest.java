@@ -31,14 +31,14 @@ public class OperationTest {
         assertEquals("Days of birthday does not match",expectedOutput,yearList);
     }
 
-//    @Test
-//    public void getTimeOfZone() {
-//        LocalDateTime localtDateAndTime = LocalDateTime.now();
-//        ZoneId zone = ZoneId.of("America/New_York");
-//        ZonedDateTime actualOutput = operationObj.getTimeOfZone(zone);
-//        ZonedDateTime expectedOutput = ZonedDateTime.of(localtDateAndTime, zone);
-//        assertEquals("current time zone is not matching",expectedOutput,actualOutput);
-//    }
+    @Test
+    public void getTimeOfZone() {
+        LocalDateTime localtDateAndTime = LocalDateTime.now();
+        ZoneId zone = ZoneId.of("America/New_York");
+        ZonedDateTime actualOutput = operationObj.getTimeOfZone(zone);
+        ZonedDateTime expectedOutput = ZonedDateTime.of(localtDateAndTime, zone);
+        assertEquals("current time zone is not matching",expectedOutput,actualOutput);
+    }
 
     @Test
     public void getLeapYear() {
